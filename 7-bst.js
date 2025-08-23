@@ -227,12 +227,10 @@ class BST {
             // 将左子树的最大节点从父节点删除
             maxNodepParent.right = null;
             // 设置左子树最大节点的子节点
-            if(maxNode !== targetNode) {
+            if(maxNode !== targetNode.left) {
                 maxNode.left = targetNode.left;
-                maxNode.right = targetNode.right;
-            } else {
-                
             }
+            maxNode.right = targetNode.right;
             // 父节点指向最大节点
             if(parentNode === targetNode) {
                 this.root = maxNode;
@@ -258,8 +256,6 @@ bst.add(5);
 bst.add(3);
 bst.add(7);
 bst.add(1);
-bst.add(0);
-bst.add(2);
 bst.add(4);
 bst.add(6);
 bst.add(8);
